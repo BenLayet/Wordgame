@@ -7,8 +7,7 @@ async function main(){
   const letters = await userInput.askForWord();
 
   const anagrams = wordTools.findAnagrams(letters);
-  
-  console.log(`Word: ${word}`);
+ 
   console.log(`Anagrams: ${anagrams.join(', ')}`);
 
 console.log('End of the game')
