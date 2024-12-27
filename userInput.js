@@ -7,9 +7,9 @@ function askForWord() {
       output: process.stdout
     });
 
-    rl.question('Enter a word: ', (word) => {
+    rl.question('Enter letters: ', (letters) => {
       rl.close();
-      resolve(word);
+      resolve(letters);
     });
   });
 }
