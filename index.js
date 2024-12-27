@@ -4,9 +4,9 @@ const wordTools = require('./wordTools');
 
 async function main(){
   console.log('Welcome to the word game!');
-  const word = await userInput.askForWord();
+  const letters = await userInput.askForWord();
 
-  const anagrams = wordTools.findAnagrams(word);
+  const anagrams = wordTools.findAnagrams(letters);
   
   console.log(`Word: ${word}`);
   console.log(`Anagrams: ${anagrams.join(', ')}`);
