@@ -1,11 +1,12 @@
 const userInput = require('./userInput');
 const gridOperations = require('./gridOperations');
-//const wordlist = require('./wordlist');
+const wordTools = require('./wordTools');
 
 async function main(){
   console.log('Welcome to the word game!')
-    const word = await userInput.askForWord();
+    const word = await  userInput.askForWord();
 
+  const anagrams = wordTools.findAnagrams(word);
   
   console.log(`Word: ${word}`);
 }
