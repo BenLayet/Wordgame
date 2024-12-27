@@ -10,7 +10,7 @@ async function main(){
 
   const word = await userInput.chooseOne(anagrams);
  
-  console.log(`Anagrams: ${anagrams.join(', ')}`);
+  console.log(`Anagram: ${word}`);
 
 console.log('End of the game')
 }
