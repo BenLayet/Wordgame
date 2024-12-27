@@ -1,13 +1,17 @@
-const readline = require('readline').createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const readline = require('readline');
 
- async function askForWord(){
-  return readline.question('Enter a word: ', word => {
-    readline.close();
-    return word;
+function askForWord() {
+  return new Promise((resolve) => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+
+    rl.question('Enter a word: ', (word) => {
+      rl.close();
+      resolve(word);
+    });
   });
 }
 
-module.exports = {askForWord};
+module.exports = { askForWord };
