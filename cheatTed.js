@@ -17,7 +17,7 @@ async function cheatTed(userInput, wordTools, gridOperations, userDisplay) {
   
   const word = await userInput.chooseOne(anagrams);
 
-  const analysis = gridOperations.analyse(letters, word);
+  const analysis = gridOperations.analyse(letters, word, 5);
 
   userDisplay.showAnalysis(analysis);
 
