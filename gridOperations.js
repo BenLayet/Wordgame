@@ -111,7 +111,7 @@ function create3x3Grid(gridLetters) {
     }
     let grid = [];
     for (let i = 0; i < 3; i++) {
-        grid.push(gridLetters.slice(i * 3, i * 3 + 3));
+        grid.push(gridLetters.slice(i * 3, i * 3 + 3).split(''));
     }
     return grid;
 }
