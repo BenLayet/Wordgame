@@ -106,7 +106,7 @@ function solve(grid, target, depth, maxDepth) {
     return { found: false, moves: [] };
 }
 
-function analyse(grid, word, maxMoves){
+function analyse(gridLetters, word, maxMoves){
   return {
     challenge:{
       initialGrid: grid,
