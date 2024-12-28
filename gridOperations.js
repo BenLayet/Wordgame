@@ -89,7 +89,9 @@ function solve(grid, target, depth, maxDepth) {
     for (let i = 0; i < 3; i++) {
         for (let op of operations) {
             let newGrid = op.func(grid, i);
-            let result = solve(newGrid, target, depth + 1, maxDepth); // Correct parameter passing
+
+console.debug(JSON.stringify(op), depth);
+            let result = solve(newGrid, target, depth + 1, maxDepth);
 
             if (result.found) {
                 result.moves.unshift({ action: op.type, index: i, resultingGrid: newGrid });
