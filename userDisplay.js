@@ -36,7 +36,7 @@ function showSolution(solution) {
 
 
 function showAnalysis(analysis) {
-  showMessage(JSON.stringify(analysis,'  ');
+  showMessage(JSON.stringify(analysis,'  '));
  
   showChallenge(analysis.challenge);
   if (analysis.solution.found) {
