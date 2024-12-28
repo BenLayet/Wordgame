@@ -77,12 +77,6 @@ function canSpell(grid, target) {
 }
 
 
-// Fonction pour afficher la grille
-function displayGrid(grid) {
-    console.log(grid.map(row => row.join(' ')).join('\n'));
-    console.log('---------------');
-}
-
 // Fonction de recherche avec profondeur limitée
 function solve(grid, target, depth, maxDepth) {
     if (canSpell(grid, target)) return { found: true, moves: [], finalGrid: grid };
@@ -102,7 +96,7 @@ function solve(grid, target, depth, maxDepth) {
             let result = solve(newGrid, depth + 1, maxDepth);
 
             if (result.found) {
-                result.moves.unshift({ action: op.type, index: i });
+                result.moves.unshift({ action: op.type, index: i, resultingGrid: newGrid});
                 result.finalGrid = newGrid;
                 return result;
             }
@@ -112,11 +106,19 @@ function solve(grid, target, depth, maxDepth) {
     return { found: false, moves: [] };
 }
 
-
+function analyse(grid, word, maxMoves){
+  return {
+    challenge:{
+      initialGrid: grid,
+      target: word
+    },
+    solution: solve(grid, word, 0, maxMoves);
+  };
+}
 module.exports = {
   rotateRowRight,
   rotateRowLeft,
   rotateColumnDown,
   rotateColumnUp,
-  canSpell 
+  analyse 
 };
