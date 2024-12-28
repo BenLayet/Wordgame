@@ -6,7 +6,7 @@ function assert(condition, message) {
   }
 }
 
-async function cheatTed(userInput, wordTools) {
+async function cheatTed(userInput, wordTools, gridOperations) {
   console.log('Welcome');
 
   const letters = await userInput.askForWord();
@@ -17,6 +17,12 @@ async function cheatTed(userInput, wordTools) {
   
   const word = await userInput.chooseOne(anagrams);
   console.log(`Anagram: ${word}`);
+
+  const analysis = gridOperations.analyse(letters, word);
+
+
+ userDisplay.show(analysis);
+
 
   console.log('End of the game');
 }
