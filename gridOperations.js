@@ -119,7 +119,7 @@ function analyse(gridLetters, target, maxMoves){
   const initialGrid = create3x3Grid(gridLetters);
   return {
     challenge:{
-      initialGrid
+      initialGrid,
       target
     },
     solution: solve(initialGrid, target, 0, maxMoves)
