@@ -89,8 +89,6 @@ function solve(grid, target, depth, maxDepth) {
     for (let i = 0; i < 3; i++) {
         for (let op of operations) {
             let newGrid = op.func(grid, i);
-
-console.debug(JSON.stringify(op), depth, maxDepth);
             let result = solve(newGrid, target, depth + 1, maxDepth);
 
             if (result.found) {
