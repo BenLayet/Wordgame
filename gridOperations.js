@@ -112,7 +112,7 @@ function analyse(grid, word, maxMoves){
       initialGrid: grid,
       target: word
     },
-    solution: solve(grid, word, 0, maxMoves);
+    solution: solve(grid, word, 0, maxMoves)
   };
 }
 module.exports = {
