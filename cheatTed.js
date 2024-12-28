@@ -1,3 +1,10 @@
+function assert(condition, message) {
+    if (!condition) {
+      throw new Error(message);
+    }
+  }
+
+
 async function cheatTed(userInput, wordTools) {
   console.log('Welcome');
   const letters = await userInput.askForWord();
