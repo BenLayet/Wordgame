@@ -76,6 +76,43 @@ function canSpell(grid, target) {
     return false;
 }
 
+
+// Fonction pour afficher la grille
+function displayGrid(grid) {
+    console.log(grid.map(row => row.join(' ')).join('\n'));
+    console.log('---------------');
+}
+
+// Fonction de recherche avec profondeur limitée
+function solve(grid, target, depth, maxDepth) {
+    if (canSpell(grid, target)) return { found: true, moves: [], finalGrid: grid };
+
+    if (depth === maxDepth) return { found: false, moves: [] };
+
+    let operations = [
+        { type: "rotateRowRight", func: rotateRowRight },
+        { type: "rotateRowLeft", func: rotateRowLeft },
+        { type: "rotateColumnDown", func: rotateColumnDown },
+        { type: "rotateColumnUp", func: rotateColumnUp }
+    ];
+
+    for (let i = 0; i < 3; i++) {
+        for (let op of operations) {
+            let newGrid = op.func(grid, i);
+            let result = solve(newGrid, depth + 1, maxDepth);
+
+            if (result.found) {
+                result.moves.unshift({ action: op.type, index: i });
+                result.finalGrid = newGrid;
+                return result;
+            }
+        }
+    }
+
+    return { found: false, moves: [] };
+}
+
+
 module.exports = {
   rotateRowRight,
   rotateRowLeft,
