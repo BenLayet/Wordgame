@@ -19,21 +19,17 @@ function showChallenge(challenge) {
 function showSolution(solution) {
   showMessage(`Solution:`);
 
-for (let move of solution.moves) {
+  for (let move of solution.moves) {
         if (move.action === "rotateRowRight") {
-            grid = rotateRowRight(grid, move.index);
             console.log(`Action : Rotation droite de la ligne ${move.index + 1}`);
         } else if (move.action === "rotateRowLeft") {
-            grid = rotateRowLeft(grid, move.index);
             console.log(`Action : Rotation gauche de la ligne ${move.index + 1}`);
         } else if (move.action === "rotateColumnDown") {
-            grid = rotateColumnDown(grid, move.index);
             console.log(`Action : Rotation bas de la colonne ${move.index + 1}`);
         } else if (move.action === "rotateColumnUp") {
-            grid = rotateColumnUp(grid, move.index);
             console.log(`Action : Rotation haut de la colonne ${move.index + 1}`);
         }
-        displayGrid(grid);
+        showGrid(move.resultingGrid);
     }
 }
 
