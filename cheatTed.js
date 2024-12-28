@@ -1,6 +1,8 @@
+const { calculatePoints } = require('./tedPolicies');
+
 function assert(condition, message) {
   if (!condition) {
-    throw message;
+    throw new Error(message);
   }
 }
 
@@ -10,10 +12,13 @@ async function cheatTed(userInput, wordTools) {
   const letters = await userInput.askForWord();
   const anagrams = wordTools.findAnagrams(letters);
   assert(anagrams.length > 0, 'No anagram found');
+  
+  anagrams.sort((a, b) => calculatePoints(a) - calculatePoints(b));
+  
   const word = await userInput.chooseOne(anagrams);
   console.log(`Anagram: ${word}`);
 
-  console.log('Bye');
+  console.log('End of the game');
 }
 
 module.exports = { cheatTed };
