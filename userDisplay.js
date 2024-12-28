@@ -13,7 +13,7 @@ function showChallenge(challenge) {
   showMessage(`Challenge:`);
   showMessage ('Initial Grid:');
   showGrid(challenge.initialGrid);
-  showMessage(`target: ${challenge. target}`);
+  showMessage(`target: ${challenge.target}`);
 }
 
 function showSolution(solution) {
