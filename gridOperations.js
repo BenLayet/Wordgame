@@ -126,9 +126,5 @@ function analyse(gridLetters, target, maxMoves){
   };
 }
 module.exports = {
-  rotateRowRight,
-  rotateRowLeft,
-  rotateColumnDown,
-  rotateColumnUp,
   analyse 
 };
