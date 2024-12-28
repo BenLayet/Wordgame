@@ -1,10 +1,10 @@
 const wordlist = require('wordlist-english')['english'];
-const trie = require('trie-prefix-tree2').trie;
+const createTrie = require('trie-prefix-tree2').createTrie;
 
-const allWordsTrie = trie(wordlist);
+const trie = createTrie(wordlist);
 
 function findAnagrams(letters) {
-    return allWordsTrie.getAnagrams(letters);
+    return trie.getAnagrams(letters);
 }
 
 module.exports = { findAnagrams };
