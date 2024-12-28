@@ -115,13 +115,20 @@ function create3x3Grid(gridLetters) {
 
 function analyse(gridLetters, target, maxMoves) {
     const initialGrid = create3x3Grid(gridLetters);
+    
+    let solution = {found:false};
+    for (let i = 0; i < maxMoves && !solution.found; i++){
+        solution = solve(initialGrid, target, 0, i+1) ;
+    }
+
+
     return {
         challenge: {
             initialGrid,
             target,
             maxMoves
         },
-        solution: solve(initialGrid, target, 0, maxMoves)
+        solution
     };
 }
 
