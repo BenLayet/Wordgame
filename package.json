@@ -12,6 +12,6 @@
   "dependencies": {
     "anagrams": "^1.0.2",
     "wordlist-english": "^1.2.1",
-    "trie-prefix-tree2": "^1.0.0"
+    "trie-prefix-tree2": "^3.0.1"
   }
 }
