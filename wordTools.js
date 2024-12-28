@@ -4,7 +4,7 @@ const createTrie = require('trie-prefix-tree2').createTrie;
 const trie = createTrie(wordlist);
 
 function findAnagrams(letters) {
-    return trie.getAnagrams(letters);
+    return trie.getSubAnagrams(letters);
 }
 
 module.exports = { findAnagrams };
