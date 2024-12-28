@@ -77,7 +77,7 @@ function canSpell(grid, target) {
 function solve(grid, target, depth, maxDepth) {
     if (canSpell(grid, target)) return { found: true, moves: [], finalGrid: grid };
 
-    if (depth === maxDepth) return { found: false, moves: [] };
+    if (depth >= maxDepth) return { found: false, moves: [] };
 
     let operations = [
         { type: "rotateRowRight", func: rotateRowRight },
