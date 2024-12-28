@@ -37,7 +37,7 @@ function showSolution(solution) {
 
 function showAnalysis(analysis) {
   showChallenge(analysis.challenge);
-  if (analysis.hasSolution) {
+  if (analysis.solution.found) {
     showSolution(analysis.solution);
   } else {
     showMessage('No solution found');
