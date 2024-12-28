@@ -1,18 +1,7 @@
 const userInput = require('./userInput');
 const gridOperations = require('./gridOperations');
 const wordTools = require('./wordTools');
+const cheatTed = require('./cheatTed').cheatTed;
 
-async function main(){
-  console.log('Welcome to the word game!');
-  const letters = await userInput.askForWord();
 
-  const anagrams = wordTools.findAnagrams(letters);
-
-  const word = await userInput.chooseOne(anagrams);
- 
-  console.log(`Anagram: ${word}`);
-
-console.log('End of the game')
-}
-
-main();
+cheatTed(userInput, wordTools, gridOperations);
