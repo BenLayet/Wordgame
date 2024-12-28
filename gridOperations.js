@@ -120,7 +120,8 @@ function analyse(gridLetters, target, maxMoves){
   return {
     challenge:{
       initialGrid,
-      target
+      target,
+      maxMoves
     },
     solution: solve(initialGrid, target, 0, maxMoves)
   };
