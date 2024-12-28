@@ -105,14 +105,24 @@ function solve(grid, target, depth, maxDepth) {
 
     return { found: false, moves: [] };
 }
-
-function analyse(gridLetters, word, maxMoves){
+function create3x3Grid(gridLetters) {
+    if (gridLetters.length !== 9) {
+        throw 'Grid letters must contain exactly 9 elements.';
+    }
+    let grid = [];
+    for (let i = 0; i < 3; i++) {
+        grid.push(gridLetters.slice(i * 3, i * 3 + 3));
+    }
+    return grid;
+}
+function analyse(gridLetters, target, maxMoves){
+  const initialGrid = create3x3Grid(gridLetters);
   return {
     challenge:{
-      initialGrid: grid,
-      target: word
+      initialGrid
+      target
     },
-    solution: solve(grid, word, 0, maxMoves)
+    solution: solve(initialGrid, target, 0, maxMoves)
   };
 }
 module.exports = {
