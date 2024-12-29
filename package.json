@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cucumber-js"
   },
   "author": "BenLayet",
   "license": "ISC",
   "dependencies": {
     "anagrams": "^1.0.2",
-    "wordlist-english": "^1.2.1",
-    "trie-prefix-tree2": "^3.0.1"
+    "trie-prefix-tree2": "^3.0.1",
+    "wordlist-english": "^1.2.1"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.1.1"
   }
 }
