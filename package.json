@@ -2,19 +2,35 @@
   "name": "wordgame",
   "version": "1.0.0",
   "description": "A word game application",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "cucumber-js"
+    "test": "cucumber-js",
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "BenLayet",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.26.7",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-react": "^7.26.3",
     "anagrams": "^1.0.2",
+    "babel-loader": "^9.2.1",
+    "html-webpack-plugin": "^5.6.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "trie-prefix-tree2": "^3.0.1",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0",
     "wordlist-english": "^1.2.1"
   },
   "devDependencies": {
-    "@cucumber/cucumber": "^11.1.1"
+    "@cucumber/cucumber": "^11.1.1",
+    "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
+    "style-loader": "^4.0.0"
   }
 }
